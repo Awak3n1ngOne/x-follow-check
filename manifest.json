@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "互关检测助手 · 存档版",
+  "version": "1.0.0",
+  "description": "从 X 官方数据存档导入关注与粉丝名单，在 Chrome 侧栏本地比对双向未回关关系。",
+  "minimum_chrome_version": "120",
+  "permissions": ["sidePanel", "storage"],
+  "background": { "service_worker": "background.js" },
+  "side_panel": { "default_path": "panel.html" },
+  "action": {
+    "default_title": "打开互关检测助手",
+    "default_icon": { "16": "icons/16.png", "32": "icons/32.png" }
+  },
+  "icons": {
+    "16": "icons/16.png", "32": "icons/32.png", "48": "icons/48.png", "128": "icons/128.png"
+  }
+}

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>互关检测助手 · 存档版</title>
+  <link rel="icon" href="icons/32.png">
+  <link rel="stylesheet" href="panel.css">
+  <script type="module" src="panel.mjs"></script>
+</head>
+<body>
+  <main class="app">
+    <header class="masthead">
+      <img src="icons/48.png" width="30" height="30" alt="">
+      <h1>互关检测助手 <span class="version-label">存档版</span></h1>
+    </header>
+
+    <section class="overview" aria-label="存档概览">
+      <div class="orbit" aria-hidden="true"><i></i><i></i><i></i></div>
+      <p class="identity">X 数据存档</p>
+      <dl class="counts">
+        <div><dt>关注</dt><dd id="following-count">—</dd></div>
+        <div><dt>粉丝</dt><dd id="follower-count">—</dd></div>
+      </dl>
+      <div class="scan-controls">
+        <button type="button" id="select-folder" class="primary">导入存档文件夹 <span aria-hidden="true">↗</span></button>
+        <button type="button" id="select-files" class="stop">选取文件</button>
+      </div>
+      <input type="file" id="folder" webkitdirectory hidden>
+      <input type="file" id="files" accept=".js,.json" multiple hidden>
+      <p class="last-scan" id="imported-at">请选择解压后的 data 文件夹</p>
+    </section>
+
+    <div class="notice" id="notice" role="status" hidden></div>
+
+    <section class="results" aria-label="比对结果">
+      <div class="switcher" role="group" aria-label="名单类型">
+        <button type="button" id="nonreciprocal" aria-pressed="true">对方未回关 <span id="nonreciprocal-count">—</span></button>
+        <button type="button" id="notFollowedBackByMe" aria-pressed="false">我未回关 <span id="notFollowedBackByMe-count">—</span></button>
+      </div>
+      <p class="explanation" id="explanation"></p>
+      <label class="search">
+        <span aria-hidden="true" class="magnifier"></span>
+        <input type="search" id="query" aria-label="搜索名称、用户名或账号 ID" placeholder="搜索名称、用户名或账号 ID">
+      </label>
+      <p class="empty" id="empty"></p>
+      <ol class="people" id="people" hidden></ol>
+      <nav class="pagination" id="pagination" aria-label="结果分页" hidden>
+        <button type="button" id="prev">上一页</button>
+        <span id="page"></span>
+        <button type="button" id="next">下一页</button>
+      </nav>
+    </section>
+    <footer>
+      <a href="https://help.x.com/zh-cn/managing-your-account/accessing-your-x-data" target="_blank" rel="noopener noreferrer">如何下载 X 存档 ↗</a>
+      <button type="button" id="clear" hidden>清除本地缓存</button>
+    </footer>
+  </main>
+</body>
+</html>
